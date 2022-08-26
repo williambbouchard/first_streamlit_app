@@ -18,10 +18,8 @@ fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.
 
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 
-
 # Display the table on the page.
 streamlit.dataframe(fruits_to_show)
-
 
 streamlit.header("Fruityvice Fruit Advice!")
 
@@ -44,3 +42,7 @@ my_cur.execute("SELECT * FROM fruit_load_list")
 my_data_rows = my_cur.fetchall()
 streamlit.header("The fruit load list contains:")
 streamlit.dataframe(my_data_rows)
+
+
+fruit_choice_snowflake = streamlit.text_input('What fruit would you like to add?','jackfruit')
+streamlit.write('The user entered ', fruit_choice_snowflake)
